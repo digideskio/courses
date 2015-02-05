@@ -1,0 +1,76 @@
+Problem Set 1
+
+1.11
+
+25! = 1.551121 * 1025 paths
+(1.551121 * 1025 paths)/10,000,000 paths per second = 1.551121 * 1018 seconds = 4.91857244 * 1010 years
+It would take about 5 * 1013 years to determine the optimal route for visiting the cities, so this algorithm is not feasible.
+
+A reasonable solution to the problem might be:
+
+Visited = a
+NotVisited = b, c, d, …,  y
+Current = a
+
+While notVisited is not empty
+	Shortest = 9999
+	For point in notVisited
+		Distance = distance from current to point
+		If distance < shortest
+			Shortest = distance
+			Next = point
+	Add next to visited
+	Delete next from notVisited
+	Current = next
+End of the loop
+Print the message “The order of cities for the path is”
+Print visited
+Stop
+
+The solution determines a path based on starting at point a and finding the closest city that has not yet been visited, then continuing to find the closest city that has not been visited to the current point, until all 25 cities have been reached.
+
+2.18
+
+a.	The output of the algorithm is matches at positions 10, 23, and 28 (for band, and, and handle).
+b.	The algorithm could be modified to find the complete word “and” by checking that the pattern is not preceded or followed by a letter of the alphabet (defined as characters A through Z). That could be incorporated in the second while loop, adding to the conditions of the if statement. That way, the pattern a-n-d could be preceded or followed by spaces or punctuation marks and still count as a match.
+
+While both (i ≤ m) and (Mismatch = NO) do
+	If Pi ≠ Tr+(i-1) and k-1 ≠ letter and k+m+1 ≠ letter then
+Set Mismatch to YES
+	Else
+		Increment i by 1 (to move to the next character)
+End of the loop
+
+2.23
+
+Get value for k, the size of the list
+Get values for N1, N2, …, Nk, the list of values
+Get value for SUM
+Set value of p, position in the list, to 1
+While (p ≤ k-1) do
+	Set value of i to 1
+While (p + i ≤ k) do
+Set the value of Pairing to NO
+If Np + Np+i = SUM
+			Set Pairing to YES
+			Print the values of Np and Np+i
+		Else
+			Increment i by 1
+Increment p by 1
+If Pairing = NO then
+	Print the message “Sorry, there is no such pair of values”
+
+3.14
+
+0.003n2 = 243n
+0.003n = 243
+n = 243/0.003 = 81,000
+
+Algorithm B is more efficient for values above 81,000.
+
+3.36 
+
+a.	2, 1, 2, 1, 2, 1, 2, 1
+b.	4, 2, 1, 4, 2, 1, 4, 2, 1, 4, 2, 1, 4, 2, 1, 4, 2, 1, 4, 2, 1, 4, 2, 1
+c.	nlg(n)
+d.	64 work units

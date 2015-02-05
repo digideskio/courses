@@ -1,0 +1,83 @@
+Problem Set 5
+
+12.22
+; Move to the right over 1.
+0 1 1 R 0
+; Replace a blank with 0 at the right-hand end of the string.
+0 _ 0 L 1
+; Move to the left over 1.
+1 1 1 L 1
+; Replace a blank with 0 at the left-hand end of the string.
+1 _ 0 R 0
+; Move to the right over 0s.
+0 0 0 R 0
+; Move to the left over 0s.
+1 0 0 L 1
+
+ 
+12.28
+; Move to the right over 1s.
+0 1 1 R 0
+; Move to the right over 0s.
+0 0 0 R 0
+; Reach a blank and switch to left.
+0 _ _ L 1
+; Replace the 0 at the right-hand end of the string with a 1.
+1 0 1 R 3
+; Replace the 1 at the right-hand end of the string with a 0 and switch to left.
+1 1 0 L 2
+; Replace the next 0 with a 1.
+2 0 1 R 3
+; Replace the next 1 with a 0 and continue to left.
+2 1 0 L 2
+; Replace a blank with 1 at the left-hand end of the string. 
+2 _ 1 L 3
+
+ 
+12.32
+; Replace 1 with blank and move right.
+0 1 _ R 1
+; Move to right over 1s.
+1 1 1 R 1
+; Move to right over 0s.
+1 0 0 R 1
+; Reach a blank and switch to left.
+1 _ _ L 2
+; Replace 1 with blank and move left.
+2 1 _ L 5
+; Replace 0 with blank and move right.
+0 0 _ R 3
+; Move to right over 1s.
+3 1 1 R 3
+; Move to right over 0s.
+3 0 0 R 3
+; Reach a blank and switch to left.
+3 _ _ L 4
+; Replace 0 with blank and move left.
+4 0 _ L 5
+; Replace 1 with blank and move left.
+5 1 _ L 6
+; Move to left over 1s.
+6 1 1 L 6
+; Move to left over 0s.
+6 0 0 L 6
+; Reach a blank and switch to right.
+6 _ _ R 7
+; Replace 1 with blank and move right.
+7 1 _ R 0
+; Replace 0 with blank and move left.
+5 0 _ L 8
+; Move to left over 1s.
+8 1 1 L 8
+; Move to left over 0s.
+8 0 0 L 8
+; Reach a blank and switch to right.
+8 _ _ R 9
+; Replace 0 with blank and move right.
+9 0 _ R 0
+
+12.39
+The uniform halting problem leads directly to the first of the practical consequences of unsolvability problems described in the chapter, that no program can be written to decide whether any given program always stops eventually, no matter what the input. The consequence follows from the problem because if a collection of Turing machine instructions cannot decide whether the Turing machine will halt for every input tape, then by the Church-Turing Thesis, no such algorithm can exist (and no such program can be written).
+
+12.40
+The 10-step halting problem is computable because it lacks the generality of the halting problem, which is what makes it unsolvable. Because the problem has set, finite parameters (deciding if a Turing machine will halt within 10 steps), it can be solved by running through 10 steps and seeing if the Turing machine halts in that period. However, the same parameters that make the problem solvable also mean that its utility is limited—if the Turing machine does not halt within 10 steps, we still don’t know whether it will ever halt or run forever. 

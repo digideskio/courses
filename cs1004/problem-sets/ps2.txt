@@ -1,0 +1,102 @@
+Problem Set 2
+
+R2.6
+
+a.	1 + 7 = 8
+b.	1 + 0 = 1
+c.	35 / 2 = 17
+d.	35 / 2 = 17.5
+e.	(int) (0.5 * 35) = (int) 17.5 = 17
+f.	(int) Math.round(0.5 * 35) = (int) Math.round(17.5) = (int) 18 = 18
+
+R2.7
+
+a.	5 + 5 = 10
+b.	e
+c.	s.substring(5 / 2, 5) = s.substring(2, 5) = llo
+d.	HelloWorld
+e.	WorldHello
+
+R3.1
+
+a.	n = 1; k = 2; r = 1
+b.	n = 1; k = 2; r = 2
+c.	n = 1; k = 1; r = 2
+d.	n = 1; k = 6; r = 3
+
+R3.29
+
+a.	false && true returns FALSE
+b.	false || true returns TRUE
+c.	true && true returns TRUE
+d.	true || true returns TRUE
+e.	false && false returns FALSE
+f.	false || false returns FALSE
+g.	true && false returns FALSE
+h.	true || false returns TRUE
+
+R4.2
+
+a.	int i = 0;
+int sum = 0;
+
+while (i <= 50)
+{
+	i++;
+	int n = i * 2;
+	sum = sum + n;
+}
+b.	int i = 0;
+int sum = 0;
+
+do
+{
+	i++;
+	int square = i * i;
+	sum = sum + square;
+}
+while (square <= 100);
+c.	int a;
+int b;
+int sum = 0;
+
+for (int i = Math.min(a, b); i < Math.max(a, b) – 2;  i++)
+{
+	if (i % 2 != 0)
+	{
+		sum = sum + i;
+	}
+}
+d.	int sum = 0;
+
+while (n > 0)
+{
+	int digit = n % 10;
+	if (digit % 2 != 0)
+	{
+		sum = sum + digit;
+	}
+	n = n / 10;
+}
+
+R4.19
+
+a.	n = 1 + 2 = 3
+n = 3 + 3 = 6
+n = 6 + 4 = 10
+b.	i = 2
+i = 3
+i = 4
+i = 5
+c.	y = 1 / 2 = 0.5
+x = 1 + 0.5 = 1.5
+i = 1
+
+y = 0.5 / 2 = 0.25
+x = 1.5 + 0.25 = 1.75
+i = 2
+
+y = 0.25 / 2 = 0.125
+x = 1.75 + 0.125 = 1.875
+i = 3
+d.	i = 0
