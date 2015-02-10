@@ -1,0 +1,198 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+\usepackage[margin=1in]{geometry}
+
+\title{Symbolic Logic: Homework #2}
+\author{Jackie Luo}
+\date{February 10, 2015}
+
+\begin{document}
+
+\maketitle
+
+\section{2.2}
+\subsection{$\neg((\neg A) \wedge \neg(B \wedge A))$}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{|l|l|l|l|l|}
+\hline
+A & B & B \wedge A & (\neg A) \wedge \neg(B \wedge A) & \neg((\neg A) \wedge \neg(B \wedge A)) \\ \hline
+T & T & T & F & T \\ \hline
+T & F & F & F & T \\ \hline
+F & T & F & T & F \\ \hline
+F & F & F & T & F \\ \hline
+\end{tabular}
+\end{table}
+
+\newline
+\subsection{$(\neg((\neg A) \wedge \neg(B \wedge C))) \wedge (A \wedge B)$}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{|l|l|l|l|l|l|l|}
+\hline
+A & B & C & B \wedge C & (\neg A) \wedge \neg(B \wedge C) & A \wedge B & \neg((\neg A) \wedge \neg(B \wedge C)) \wedge (A \wedge B) \\ \hline
+T & T & T & T & F & T & T \\ \hline
+T & T & F & F & F & T & T \\ \hline
+T & F & T & F & F & F & F \\ \hline
+T & F & F & F & F & F & F \\ \hline
+F & T & T & T & F & F & F \\ \hline
+F & T & F & F & T & F & F \\ \hline
+F & F & T & F & T & F & F \\ \hline
+F & F & F & F & T & F & F \\ \hline
+\end{tabular}
+\end{table}
+
+\newline
+\subsection{$\neg(A \wedge ((\neg A) \wedge (\neg B)))$}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{|l|l|l|l|}
+\hline
+A & B & (\neg A) \wedge (\neg B) & \neg(A \wedge ((\neg A) \wedge (\neg B))) \\ \hline
+T & T & F & T \\ \hline
+T & F & F & T \\ \hline
+F & T & F & T \\ \hline
+F & F & T & T \\ \hline
+\end{tabular}
+\end{table}
+
+\newpage
+\subsection{$(\neg(A \wedge ((\neg A) \wedge (\neg C)))) \wedge (\neg (\neg B))$}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{|l|l|l|l|l|l|}
+\hline
+A & B & C & (\neg A) \wedge (\neg C) & A \wedge ((\neg A) \wedge (\neg C)) & \neg(A \wedge ((\neg A) \wedge (\neg C))) \wedge \neg (\neg B) \\ \hline
+T & T & T & F & F & T \\ \hline
+T & T & F & F & F & T \\ \hline
+T & F & T & F & F & T \\ \hline
+T & F & F & F & F & T \\ \hline
+F & T & T & F & F & F \\ \hline
+F & T & F & T & F & F \\ \hline
+F & F & T & F & F & F \\ \hline
+F & F & F & T & F & F \\ \hline
+\end{tabular}
+\end{table}
+
+\newline
+\subsection{$C \wedge (\neg(C \wedge \neg(A \wedge C)))$}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{|l|l|l|l|l|}
+\hline
+A & C & A \wedge C & C \wedge \neg(A \wedge C) & C \wedge \neg(C \wedge \neg(A \wedge C)) \\ \hline
+T & T & T & F & T \\ \hline
+T & F & F & F & F \\ \hline
+F & T & F & T & F \\ \hline
+F & F & F & F & F \\ \hline
+\end{tabular}
+\end{table}
+
+\newline
+\subsection{$A \wedge (\neg(C \wedge ((\neg C) \wedge B)))$}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{|l|l|l|l|l|l|}
+\hline
+A & B & C & (\neg C) \wedge B & C \wedge ((\neg C) \wedge B) & A \wedge \neg(C \wedge (\neg C \wedge B)) \\ \hline
+T & T & T & F & F & T \\ \hline
+T & T & F & T & F & T \\ \hline
+T & F & T & F & F & T \\ \hline
+T & F & F & T & F & T \\ \hline
+F & T & T & F & F & F \\ \hline
+F & T & F & F & F & F \\ \hline
+F & F & T & F & F & F \\ \hline
+F & F & F & F & F & F \\ \hline
+\end{tabular}
+\end{table}
+
+\section{2.3}
+$\neg((\neg A) \wedge \neg(B \wedge A)) \equiv A$
+\newline
+$(\neg((\neg A) \wedge \neg(B \wedge C))) \wedge (A \wedge B) \equiv A \wedge B$
+\newline
+$\neg(A \wedge ((\neg A) \wedge (\neg B)))$ can't be simplified.
+\newline
+$(\neg(A \wedge ((\neg A) \wedge (\neg C)))) \wedge (\neg (\neg B)) \equiv A$
+\newline
+$C \wedge (\neg(C \wedge \neg(A \wedge C))) \equiv A \wedge C$
+\newline
+$A \wedge (\neg(C \wedge ((\neg C) \wedge B))) \equiv A$
+
+\newpage
+\section{2.4}
+1 and 2 ($\neg((\neg A) \wedge \neg(B \wedge A))$ and $(\neg((\neg A) \wedge \neg(B \wedge C))) \wedge (A \wedge B)$)
+
+\begin{table}[h]
+\centering
+\begin{tabular}{|l|l|l|l|l|l|l|l|l|}
+\hline
+A & B & C & B \wedge A & \neg((\neg A) \wedge \neg(B \wedge A)) & B \wedge C & (\neg A) \wedge \neg(B \wedge C) & A \wedge B & \neg((\neg A) \wedge \neg(B \wedge C)) \wedge (A \wedge B) \\ \hline
+T & T & T & T & T & T & F & T & T \\ \hline
+T & T & F & T & T & F & F & T & T \\ \hline
+T & F & T & F & T & F & F & F & F \\ \hline
+T & F & F & F & T & F & F & F & F \\ \hline
+F & T & T & F & F & T & F & F & F \\ \hline
+F & T & F & F & F & F & T & F & F \\ \hline
+F & F & T & F & F & F & T & F & F \\ \hline
+F & F & F & F & F & F & T & F & F \\ \hline
+\end{tabular}
+\end{table}
+
+3 and 5 ($\neg(A \wedge ((\neg A) \wedge (\neg B)))$ and $C \wedge (\neg(C \wedge \neg(A \wedge C)))$)
+
+\begin{table}[h]
+\centering
+\begin{tabular}{|l|l|l|l|l|l|l|l|}
+\hline
+A & B & C & (\neg A) \wedge (\neg B) & \neg(A \wedge ((\neg A) \wedge (\neg B))) & A \wedge C & C \wedge \neg(A \wedge C) & C \wedge \neg(C \wedge \neg(A \wedge C)) \\ \hline
+T & T & T & F & T & T & F & T \\ \hline
+T & T & F & F & T & F & F & F \\ \hline
+T & F & T & F & T & T & F & T \\ \hline
+T & F & F & F & T & F & F & F \\ \hline
+F & T & T & F & T & F & T & F \\ \hline
+F & T & F & F & T & F & F & F \\ \hline
+F & F & T & T & T & F & T & F \\ \hline
+F & F & F & T & T & F & F & F \\ \hline
+\end{tabular}
+\end{table}
+
+The other truth tables can be compared as they are because they contain the same variables ($A$, $B$, and $C$). The full table is constructed below, with the truth-values for counterexamples of the non-equivalent statements.
+
+\begin{table}[h]
+\centering
+\begin{tabular}{|l|l|l|l|l|l|l|}
+\hline
+ & 1 & 2 & 3 & 4 & 5 & 6 \\ \hline
+1 & + & \begin{tabular}[c]{@{}l@{}}A: True\\ B: False\\ C: True\end{tabular} & \begin{tabular}[c]{@{}l@{}}A: False\\ B: False\end{tabular} & + & \begin{tabular}[c]{@{}l@{}}A: True\\ B: True\\ C: False\end{tabular} & + \\ \hline
+2 & \begin{tabular}[c]{@{}l@{}}A: True\\ B: False\\ C: True\end{tabular} & + & \begin{tabular}[c]{@{}l@{}}A: True\\ B: False\\ C: True\end{tabular} & \begin{tabular}[c]{@{}l@{}}A: True\\ B: False\\ C: True\end{tabular} & \begin{tabular}[c]{@{}l@{}}A: True\\ B: True\\ C: False\end{tabular} & \begin{tabular}[c]{@{}l@{}}A: True\\ B: False\\ C: True\end{tabular} \\ \hline
+3 & \begin{tabular}[c]{@{}l@{}}A: False\\ B: False\end{tabular} & \begin{tabular}[c]{@{}l@{}}A: True\\ B: False\\ C: True\end{tabular} & + & \begin{tabular}[c]{@{}l@{}}A: False\\ B: True\\ C: True\end{tabular} & \begin{tabular}[c]{@{}l@{}}A: True\\ B: True\\ C: False\end{tabular} & \begin{tabular}[c]{@{}l@{}}A: False\\ B: True\\ C: True\end{tabular} \\ \hline
+4 & + & \begin{tabular}[c]{@{}l@{}}A: True\\ B: False\\ C: True\end{tabular} & \begin{tabular}[c]{@{}l@{}}A: False\\ B: True\\ C: True\end{tabular} & + & \begin{tabular}[c]{@{}l@{}}A: True\\ B: True\\ C: False\end{tabular} & + \\ \hline
+5 & \begin{tabular}[c]{@{}l@{}}A: True\\ B: True\\ C: False\end{tabular} & \begin{tabular}[c]{@{}l@{}}A: True\\ B: True\\ C: False\end{tabular} & \begin{tabular}[c]{@{}l@{}}A: True\\ B: True\\ C: False\end{tabular} & \begin{tabular}[c]{@{}l@{}}A: True\\ B: True\\ C: False\end{tabular} & + & \begin{tabular}[c]{@{}l@{}}A: True\\ B: True\\ C: False\end{tabular} \\ \hline
+6 & + & \begin{tabular}[c]{@{}l@{}}A: True\\ B: False\\ C: True\end{tabular} & \begin{tabular}[c]{@{}l@{}}A: False\\ B: True\\ C: True\end{tabular} & + & \begin{tabular}[c]{@{}l@{}}A: True\\ B: True\\ C: False\end{tabular} & + \\ \hline
+\end{tabular}
+\end{table}
+
+\newpage
+\section{2.5}
+\begin{table}[h]
+\centering
+\begin{tabular}{|l|l|l|l|l|l|}
+\hline
+A & B & A \wedge B & A \vee^x B & (A \wedge B) \vee^x (A \vee^x B) & A \vee B \\ \hline
+T & T & T & F & T & T \\ \hline
+T & F & F & T & T & T \\ \hline
+F & T & F & T & T & T \\ \hline
+F & F & F & F & F & F \\ \hline
+\end{tabular}
+\end{table}
+$(A \wedge B) \vee^x (A \vee^x B)$ is equivalent to $A \vee B$ and uses only "and" and "exclusive or" symbols.
+
+\end{document}
