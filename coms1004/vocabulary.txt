@@ -1,0 +1,98 @@
+Accessor method—queries the object for some information without changing it
+ACK (acknowledgement message)—a message sent if a node B correctly receives a packet; contains the sequence number of the correctly receives packet and allows node A to know that the packet was correctly received
+Actual parameter—value that is supplied to the method when it is called; also known as an argument
+Address—a unique identifier for each memory cell that shapes all accesses to memory in RAM
+Algorithm—a well-ordered collection of unambiguous and effectively computable operations that, when executed, produces a result and halts in a finite amount of time
+API (application programming interface)—a code library for building programs
+Arguments—the values that are supplied to the method when it is called; also known as actual parameters
+Arithmetic/logic unit (ALU)—the subsystem that performs such mathematical and logical operations as addition, subtraction, and comparison for equality; made up of the registers, the interconnections between components, and ALU circuitry; part of the CPU
+ARQ Algorithm—automatic repeat request algorithm; the basis for all Data Link Control protocols in current use; works because node A maintains a copy of the packet after it has been sent, then the ACK lets the node A know when the packet has been received and that it can be deleted
+ASCII (American Standard Code for Information Interchange)—an international standard for representing textual information in the majority of computers; uses 8 bits to represent each character and can encode a total of 256 characters
+Assembly language—a new language developed by programmers working on early first-generation computers, designed for people as well as computers; created a more productive, user-oriented environment; considered second-generation, low-level programming languages
+Binary—a base-2 positional numbering system in which the value of a digit depends not only on its absolute value but also on its specific position within a number
+Bit—the two digits, 0 and 1 (a contraction of the two words “binary digit”)
+Boolean—stores a condition that can be true or false; has exactly these two values
+Boolean expression—any expression that evaluates to either true or false
+Boolean operator—an operator that combines Boolean condition; AND and OR
+Byte—8-bit unit that has become the standard cell size; 100
+Bytecode—low-level code that is not yet object code; translted from source code by a compiler, then translated into machine language
+Cache memory—a special, high-speed memory unit for the first time a computer references a piece of data that presumably will be needed again immediately; typically 5 to 10 times faster than RAM but much smaller
+Cast—an operator used to convert one value to a different type (i.e., double to int)
+Church-Turing Thesis—if there exists an algorithm to do a symbol manipulation task, then there exists a Turing machine to do that task
+Class—a file that contains instructions for the Java virtual machine; the fundamental building blocks of Java programs (each Java program consists of one or more)
+Compiler—system software for high-level languages that translates source code to low-level code close to machine language
+Computability—that which can be done by symbol manipulation algorithms; limits are defined by Turing machines
+Computer network—a set of independent computer systems connected by telecommunications links for the purpose of sharing information and resources
+Computer science—the study of algorithms, including their formal and mathematical properties, their hardware realizations, their linguistic realizations, and their applications
+Computing agent—the machine, robot, person, or thing carrying out the steps of the algorithm
+Constructor—initializes the instance variables of an object; automatically called whenever an object is created with the new operator
+Control unit—tasked with fetching from memory the next instruction to be executed, decoding it, and executing it by issuing the appropriate command to the ALU, memory, or I/O controllers; part of the CPU
+DASD (direct access storage device)—a mass storage device in which equal access time has been eliminated (hard drives, CDs, DVDs, etc.)
+DNS (Domain Name System)—a special internet application that converts from a symbolic host name (google.com) to its equivalent 32-bit IP address; a massive distributed database that maps hundreds of millions of host computers
+Encapsulation—the process of providing a public interface, while hiding the implementation details
+Ethernet—the most widely used technology in the commercial and office environment; developed in the mid-1970s by computer scientists at the Xerox PARC center
+Explicit parameter—parameter that is explicitly mentioned in the method declaration
+Flops—floating-point operations per second; a measure of a computer’s processing power
+Formal parameter—variables created for receiving the method’s arguments; also known as parameter variables
+Gigabyte—1 billion bytes; 109; typically the minimum memory for modern computers
+Halting Problem—a problem with no Turing machine solution that asks the computer to “decide, given any collection of Turing machine instructions together with initial tape contents, whether that Turing machine will ever halt if started on that tape”
+HTTP (Hypertext Transfer Protocol)—used by the World Wide Web to access and deliver web pages
+I/O buffer—a small amount of memory that holds data within the I/O controller
+I/O controller—a device that is like a special-purpose computer whose responsibility is to handle the details of input/output and to compensate for any speed differences between I/O devices and other parts of the computer
+IDE—Integrated Development Environment; a programming environment that includes an editor, compiler, and debuggers
+Implicit parameter—the object on which a method is invoked; does not need to be written and is present exactly once in each method
+Inheritance—once a class A of objects is defined, a class B of objects can be defined as a “subclass” of A; every object of B is also an object of A, and objects of the B class will inherit all of the properties and be able to perform all the services of objects in A 
+Initialize—to specify the value that should be stored in the variable
+Instance—an object of the class
+Instance variable—a storage location that is present in each object of the class
+Instantiation—construction of an object of a class
+Instruction register (IR)—holds a copy of the instruction fetched from memory (both the op code and the address)
+Instruction set—the set of all operations that can be executed by a processor
+Interface—the features (methods, variables, and nested types) of a class that are accessible to all clients
+Internet Protocol—addresses are denoted by sequences of four numbers, each one byte (now extended to sixteen bytes); used when attempting to deliver data from one computer to another across the internet
+Kilobyte—a thousand bytes; 103
+LAN (local area network)—connects hardware devices such as computers, printers, and storage devices that are all in close proximity
+Local variable—a variable that is defined within a method
+Logic gate—fundamental building blocks of a modern computer system that implement the Boolean operations AND, OR, and NOT; electronic devices that use mathematics and logic
+Loop—statements in which a part of a program is repeated over and over until a specific goal is reached; important for calculations that require repeated steps and for processing input consisting of too many data items
+MAC (Medium Access Control)—protocols that determine how to arbitrate ownership of a shared communication line when multiple nodes want to send messages at the same time; most use a contention-based approach in which there is no central authority and all nodes compete equally for ownership of the line
+Machine language—representation of the instructions that can be decoded and executed by the control unit of a computer; expressed in binary
+Mass storage—nonvolatile storage that allows information to be saved between shutdowns of a machine
+Megabyte—a million bytes; 106
+Memory—data storage device
+Memory Address Register (MAR)—holds the address of the cell to be accessed; must be at least N bits wide, where 2N is the address space of the computer
+Memory Data Register (MDR)—contains the data value being fetched or stored; size is usually a multiple of 8
+Method—contains a collection of programming instructions that describe how to carry out a particular task; every Java applications must have a main method
+Mutator method—modifies the object on which it operates
+Object—all values other than primitive data types (numbers, characters, values of true and false) that store references; each belongs to a class
+Object reference—denotes the memory location of an object; a variable refers to an object when a variable contains the memory location of an object
+Object-oriented programming—a programming style in which tasks are solved by collaborating objects; each object has its own set of data, together with a set of methods that act upon the data
+Op code—the portion of machine language instruction that specifies the operation to be performed
+Operating system—controls the overall operation of a computer and makes it easier for users to access; the single most important piece of system software on a computer; communicates with users, determines what they want, and activates other system programsm, applications packages, or user programs to carry out their requests
+Overloading a method—using the same method name for more than one method; in Java, you can overload method names if the parameter types are different
+Overriding a method—redefining a method in a subclass by supplying a new implementation for an inherited method
+Parameter—input to the method; variables supplied in the method call
+Parameter passing—the process in which parameter variables hold the arguments supplied in the method call
+Portability—a characteristic attributed to a computer program if it can be used in operating systems without requiring a major rework (i.e., Java will run without change on Windows, UNIX, Linux, or Macintosh); compiler does not translate programs directly into CPU instructions and instead contains instructions for the virtual machine, a program that simulates a real CPU
+Primitive data type—variables that store values (numbers, characters, true/false, etc.)
+Protocol—a mutually agreed-upon set of rules, conventions, and agreements for the efficient and orderly exchange of information
+Protocol stack—also known as protocol hierarchy; the internet’s has five layers
+Pseudocode—a notation to design and represent algorithms; a set of English language constructs designed to resemble statements in a programming language but that do not actually run on a computer; simply, highly readable, and virtually no grammatical rules
+Random Access Memory (RAM)—a memory unit in which memory is divided into cells with addresses, all accesses to memory are to a specific address, and the time it takes to fetch or store the contents of a cell is the same for all the cells in memory
+Register—a storage cell that holds the operands of an arithmetic operation and that, when the operation is complete, holds its results
+SASD (sequential access storage device)—mass storage device that uses the old access technique; does not require that all units of data be identifiable via unique addresses
+Scope—the part of a program in which you can access a variable; for instance, the scope of a method’s parameter variable is the entire method
+Software—the programs the computer executes
+Static variable—a variable defined in a class that has only one value for the whole class and which can be accessed and changed by any method of that class
+Static method—a method with no implicit parameter
+Stored program concept—in which the instructions to be executed by the computer are represented as binary values and stored in memory
+Syntax—the rules for exactly how statements must be written
+Terabyte—a trillion bytes; 1012
+Time complexity—quantifies the amount of time taken by an algorithm to run; typically expressed using big O notation
+Transistor—the elementary building block or all modern computer systems; a solid-state device with no mechanical or moving parts with an ON and OFF state
+TCP (Transmission Control Protocol)—a higher-level protocol used with IP that attempts reliable delivery of data, with retries if there are failures; uses port numbers to link computers
+Truth table—a structure that expresses the rule that the AND operation produces the value true if and only if all components are true
+Turing machine—a model using a conceptual tape that extends infinitely in both direction; the tape is divided into cells, each of which contains one symbol, and both acts as memory and takes input; designed to carry out one primitive operation with three actions (replacing the symbol in a cell, going to a new state, and moving left or right)
+Von Neumann architecture—the theoretical model of computer design upon which the structure and organization of virtually all modern computers are based; based on three components: the four major subsystems (memory, input/output, ALU, and control unit), stored program concept, and sequential execution of instructions
+White space—includes spaces, tab characters, and the newline characters that separate lines; white space input characters are consumed (removed from the input) and the first character that isn’t white space becomes the first character of the word
+WAN (wide are network)—connects devices that are not in close proximity but rather are across town, across the country, or across the ocean; because they cross public property, users must purchase telecommunications services
