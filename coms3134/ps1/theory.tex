@@ -1,0 +1,44 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+\usepackage[margin=1in]{geometry}
+
+\title{Data Structures: Problem Set #1}
+\author{Jackie Luo}
+\date{February 11, 2015}
+
+\begin{document}
+
+\maketitle
+
+\section{Theory}
+\subsection{}
+The functions from slowest to fastest growth are:
+\newline
+$2/N, 128, \sqrt{N}, N \log_2 N, N^2 \log_2 N, 42N^3, 2^N = 2^{N + 1}, 3^N, N!$
+
+\subsection{}
+a. $O(N)$ because the outer for loop iterates 23 times, while the inner loop iterates $N$ times. The runtime is $O(23N)$, and we can disregard the coefficient because it doesn't significantly affect the growth rate.
+\newline
+b. $O(N^2)$ because both for loops iterate $N$ times, resulting in a runtime of $O(N^2)$.
+\newline
+c. $O(1)$ because the method only checks an if/else statement, and there are no loops to run $N$ times.
+
+\subsection{}
+a. $f(2) = 1$
+\newline
+$f(N) = (N^2 - f(2))/2$
+\newline
+b. $f(N) = N(N - 1)/2$
+\newline
+c. $f(2) = 2(2 - 1)/2 = 1$
+\newline
+$f(N + 1) = (N + 1)((N + 1) - 1)/2
+
+
+\subsection{}
+To determine a strategy to determine the value of F such that the number of broken eggs is $\log{N}$, you could use a binary search algorithm. Go to the middle floor and drop an egg. If it breaks, go to the midpoint between that floor and the ground-level floor. If not, go to the midpoint between that floor and the penthouse floor. You can continue throwing eggs, seeing if they break, and then moving down to the next midpoint if they do or up to the next midpoint if they don't. That way, you can find floor $F$ in $\log{N}$ time because you reduce the number of additional floors you need to check (and the number of throws) by half each time you throw another egg.
+\newline
+
+
+\end{document}
