@@ -1,4 +1,4 @@
-import java.util.stacks;
+import java.util.Stack;
 
 // The two-stack solution works to ensure that the mail is processed
 // in the same order that it arrives in the inbox because the inbox,
@@ -28,8 +28,8 @@ public class TwoStackQueue<T> implements Queue<T> {
             }
         }
         else if (outbox.empty() && inbox.empty()) {
-            return null
+            return null;
         }
-        return outbox.pop()
+        return outbox.pop();
     }
 }
