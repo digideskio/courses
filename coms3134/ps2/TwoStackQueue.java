@@ -12,6 +12,9 @@ import java.util.Stack;
 // the correct order, and the oldest mail will be addressed sooner, not
 // stay at the bottom of the stack while new mail continues to accumulate.
 
+// The running times for the enqueue and dequeue operations are O(n),
+// which means that the running time for the whole process is O(2n).
+
 public class TwoStackQueue<T> implements Queue<T> {
  
     private Stack<T> inbox = new Stack<T>();
