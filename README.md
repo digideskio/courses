@@ -1,8 +1,7 @@
-# Courses
+#Courses
 
-<ul>
-<li><strong>COMS1004</strong>: Introduction to Computer Science in Java</li>
-<li><strong>COMS3134</strong>: Data Structures</li>
-<li><strong>COMS3203</strong>: Discrete Math</li>
-<li><strong>PHIL3411</strong>: Symbolic Logic</li>
-</ul>
+- **COMS1004**: Introduction to Computer Science in Java
+- **COMS3134**: Data Structures
+- **COMS3203**: Discrete Math
+- **PHIL2201**: History of Philosophy II: Aquinas to Kant
+- **PHIL3411**: Symbolic Logic
