@@ -1,0 +1,296 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1in]{geometry}
+
+\title{Discrete Math: Problem Set #3}
+\author{Jackie Luo}
+\date{March 25, 2015}
+
+\begin{document}
+
+\maketitle
+
+\section{3.2, 2a}
+$f(x) = 17x + 11$
+\newline
+$0 \leq 17x + 11 \leq 17x + 11x = 28x$ whenever $x > 1$
+\newline
+$C = 28, k = 1$
+\newline
+$f(x) = 17x + 11 < 28x$ whenever $x > 1$
+\newline
+\newline
+$f(x)$ is $O(n)$, not $O(n^2)$.
+
+\section{3.2, 2c}
+$f(x) = x \log x$
+\newline
+$0 \leq x \log x \leq x^2$ whenever $x > 1$
+\newline
+$C = 1, k = 1$
+\newline
+$f(x) = x \log x < x^2$ whenever $x > 1$
+\newline
+\newline
+$f(x)$ is $O(n^2)$.
+
+\section{3.2, 8d}
+$f(x) = (x^3 + 5 \log x)/(x^4 + 1)$
+\newline
+$x^3 + 5 \log x$ is $O(x^3)$ because, at large numbers, $5 \log x$ has a negligible impact on the sum. In the denominator, $x^4 + 1$ is $O(x^4)$ because $1$ is a constant and has virtually no impact on the sum. With $O(x^3)$ and $O(x^4)$, $f(x)$ is $O(1/x)$, or $O(x^{-1})$.
+
+\section{3.2}
+\subsection{30a}
+$f(x) = 3x + 7$
+\newline
+$g(x) = x$
+\newline
+$x/2 \leq 3x + 7 \leq 10x$ whenever $x > 1$
+\newline
+The existence of $C_{1} = 1/2$, $C_{2} = 10$, and $k = 1$ means that $f(x) = \theta (g(x))$.
+
+\subsection{30b}
+$f(x) = 2x^2 + x - 7$
+\newline
+$g(x) = x^2$
+\newline
+$x^2 \leq 2x^2 + x - 7 \leq 3x^2$ whenever $x > 2$
+\newline
+The existence of $C_{1} = 1$, $C_{2} = 3$, and $k = 2$ means that $f(x) = \theta (g(x))$.
+
+\subsection{30c}
+$f(x) = \left \lfloor{x + 1/2}\right \rfloor$
+\newline
+$g(x) = x$
+\newline
+$x/2 \leq \left \lfloor{x + 1/2}\right \rfloor \leq 2x$ whenever $x > 1$
+\newline
+The existence of $C_{1} = 1/2$, $C_{2} = 2$, and $k = 1$ means that $f(x) = \theta (g(x))$.
+
+\subsection{30d}
+$f(x) = \log{x^2 + 1}$
+\newline
+$g(x) = \log_2 x$
+\newline
+$1/2(\log_2 x) \leq \log{x^2 + 1} \leq 5\log_2$ whenever $x > 1$
+\newline
+The existence of $C_{1} = 1/2$, $C_{2} = 5$, and $k = 1$ means that $f(x) = \theta (g(x))$.
+
+\subsection{30e}
+$f(x) = \log_{10} x$
+\newline
+$g(x) = \log_2 x$
+\newline
+$1/4(\log_2 x) \leq \log_{10} \leq \log_2$ whenever $x > 1$
+\newline
+The existence of $C_{1} = 1/4$, $C_{2} = 1$, and $k = 1$ means that $f(x) = \theta (g(x))$.
+
+\section{3.1, 32}
+sum = 0
+\newline
+list = []
+\newline
+for number in sequence:
+\newline
+\indent if number $>$ sum:
+\newline
+\indent \indent list.append(number)
+\newline
+\indent sum $+=$ number
+\newline
+return list
+
+\section{3.3, 30}
+The worst-case time complexity of the algorithm is $O(n)$ because it goes through the sequences of numbers once to get all of the desired terms.
+
+\section{4.2, 30c}
+$37 = 1(3^3) + 1(3^2) + 0(3^1) + 1(3^0) = 1(27) + 1(9) + 0(3) + 1(1) = 27 + 9 + 1$
+
+\section{4.3, 28}
+Using prime factorization, we can find gcd(1000, 625) and lcm(1000, 625):
+\newline
+$1000 = 2^3 \times 5^3$
+\newline
+$625 = 5^4$
+\newline
+gcd(1000, 625) = $5^3$ = 125
+\newline
+lcm(1000, 625) = $2^3 \times 5^4$ = 5000
+\newline
+$1000 \times 625 = 125 \times 5000 = 625000$
+
+\section{4.3, 32e}
+gcd(1529, 14038)
+\newline
+A = 14038, B = 1529
+\newline
+$14038/1529 = 9$ mod $277$
+\newline
+$1529/277 = 5$ mod $144$
+\newline
+$277/144 = 1$ mod $133$
+\newline
+$144/133 = 1$ mod $11$
+\newline
+$133/11 = 12$ mod $1$
+\newline
+$11/1 = 11$ mod $0$
+\newline
+gcd(1529, 14038) = 11
+
+\section{4.3, 40c}
+gcd(35, 78)
+\newline
+$78 = 35 \times 2 + 8$
+\newline
+$35 = 8 \times 4 + 3$
+\newline
+$8 = 3 \times 2 + 2$
+\newline
+$3 = 2 \times 1 + 1$
+\newline
+$2 = 1 \times 2$
+\newline
+gcd(35, 78) = 1
+\newline
+$= 3 - 2 \times 1$
+\newline
+$= 3 - (8 - 3 \times 2) \times 1 = 3 \times 3 - 8$
+\newline
+$= (35 - 8 \times 4) \times 3 - 8 = 35 \times 3 - 8 \times 11$
+\newline
+$= 35 \times 3 - (78 - 35 \times 2) \times 11 = -78 \times 11 + 35 \times 25$
+
+\section{4.3, 44}
+gcd(1001, 100001)
+\newline
+$100001 = 1001 \times 99 + 902$
+\newline
+$1001 = 902 \times 1 + 99$
+\newline
+$902 = 99 \times 9 + 11$
+\newline
+$99 = 11 \times 9$
+\newline
+gcd(1001, 100001) = 11
+\newline
+$= 902 - 99 \times 9$
+\newline
+$= 902 - (1001 - 902 \times 1) \times 9 = -1001 \times 9 +902 \times 10$
+\newline
+$= -1001 \times 9 + (100001 - 1001 \times 99) \times 10 = 100001 \times 10 - 1001 \times 999$
+
+\section{4.3, 50}
+$m$ must divide $a - b$, as we've seen in the Euclidean algorithm. As a result, we know that gcd(a, m) divides $a - b$. Because gcd(a, m) also divides $a$, it must divide $b$. Since it divides $m$, gcd(a, m) divides gcd(b, m). We can go through the same logic with gcd(b, m), meaning that the two divide each other and therefore are equal.
+
+\section{4.4, 6b}
+a = 34, m = 89
+\newline
+$89 = 34 \times 2 + 21$
+\newline
+$34 = 21 \times 1 + 13$
+\newline
+$21 = 13 \times 1 + 8$
+\newline
+$13 = 8 \times 1 + 5$
+\newline
+$8 = 5 \times 1 + 3$
+\newline
+$5 = 3 \times 1 + 2$
+\newline
+$3 = 2 \times 1 + 1$
+\newline
+$2 = 1 \times 2$
+\newline
+gcd(34, 89) = 1
+\newline
+$= 3 - 2 \times 1$
+\newline
+$= 3 - (5 - 3 \times 1) \times 1 = 3 \times 2 - 5$
+\newline
+$= (8 - 5 \times 1) \times 2 - 5 = 8 \times 2 - 5 \times 3$
+\newline
+$= 8 \times 2 - (13 - 8 \times 1) \times 3 = 8 \times 5 - 13 \times 3$
+\newline
+$= (21 - 13 \times 1) \times 5 - 13 \times 3 = 21 \times 5 - 13 \times 8$
+\newline
+$= 21 \times 5 - (34 - 21 \times 1) \times 8 = 21 \times 13 - 34 \times 8$
+\newline
+$= (89 - 34 \times 2) \times 13 - 34 \times 8 = 89 \times 13 - 34 \times 34$
+\newline
+13 is the inverse of 34 modulo 89.
+
+\section{4.4, 34}
+$23^{1002}$ mod $41$
+\newline
+$23^{40} = 1$ mod $41$, so $(23^{40})^k = 1$ mod $41$ for every positive integer $k$
+\newline
+$23^{1002} = 23^{40 \times 25 + 2} = (23^{40})^{25} \times 23^2 = 1^{25} \times 529 = 37$ (mod 41)
+
+\section{4.6, 2b}
+"STOP POLLUTION" = 18 19 14 15 // 15 14 11 11 20 19 8 14 13
+\newline
+Using $f(p) = (p + 21)$ mod $26$:
+\newline
+13 14 9 10 // 10 9 6 6 15 14 3 9 8 = "NOJK KJGGPODJI"
+
+\section{4.6, 4a}
+"EOXH MHDQV" = 4 14 23 7 // 12 7 3 16 21
+\newline
+Using $-k = -3$ mod $26$:
+\newline
+1 11 20 4 // 9 4 0 13 18 = "BLUE JEANS"
+
+\section{4.6, 10}
+Yes, you can use $k = 13$ as the enciphering function and deciphering function for a shift cipher. For example, for the example of "STOP POLLUTION," the original message is: 18 19 14 15 // 15 14 11 11 20 19 8 14 13. If we add 13 to each number and modulo 26, we get 5 6 1 2 // 2 1 24 24 7 6 21 1 0. Using that same function ($f(p) = (p + 13)$ mod $26$), we get the original message, 18 19 14 15 // 15 14 11 11 20 19 8 14 13.
+
+\section{4.6, 24}
+"ATTACK" = 0120 2001 0311
+\newline
+$C = M^{13}$ mod $2537$
+\newline
+$C = 120^{13}$ mod $43 = (-9)^{13}$ mod $43 = 28$
+\newline
+$C = 120^{13}$ mod $59 = 2^{13}$ mod $59 = 8192$ mod $59 = 50$
+\newline
+$120^{13} = 28 \times 59 \times 35 + 50 \times 43 \times 11 ($mod $2537) = 2006 + 817 ($mod $2537) = 286$
+\newline
+Computing the other two blocks, the message is 268 798 425.
+
+\section{4.6, 26}
+To find the inverse of 17 modulo $52 \times 60$:
+\newline
+$3120 = 17 \times 183 + 9$
+\newline
+$17 = 9 \times 1 + 8$
+\newline
+$9 = 8 \times 1 + 1$
+\newline
+$8 = 1 \times 8$
+\newline
+gcd(17, 3120) = 1
+\newline
+$= 9 - 8 \times 1$
+\newline
+$= 9 - (17 - 9 \times 1) \times 1 = 9 \times 2 - 17$
+\newline
+$= (3120 - 17 \times 183) \times 2 - 17 = 3120 \times 2 - 17 \times 367$
+\newline
+$-17 \times 367 = 1 - 3120 \times 2$
+\newline
+$-367 = 2753$ mod $3120$, so $d = 2753$
+\newline
+\newline
+To find the original message:
+\newline
+$3185^{2753}$ mod $53 \times 61 = 1816$
+\newline
+$2038^{2753}$ mod $53 \times 61 = 2008$
+\newline
+$2460^{2753}$ mod $53 \times 61 = 1717$
+\newline
+$2550^{2753}$ mod $53 \times 61 = 411$
+\newline
+In other words, the message is 1816 2008 1717 0411, or "SQUIRREL."
+
+\end{document}
