@@ -9,12 +9,15 @@ import java.util.Map.Entry;
 import java.util.Scanner;
 
 public class CreateIndex {
-	
-    private static Map<String, LinkedList<Integer>> index;
+ 
+    private Map<String, LinkedList<Integer>> index;
+ 
+    public CreateIndex () {
+        index = new HashMap<String, LinkedList<Integer>>();
+    }
  
     public Map<String, LinkedList<Integer>> readFile(File f) {
         Scanner fileInput = null;
-        Map<String, LinkedList<Integer>> index = new HashMap<String, LinkedList<Integer>>();
         try {
             fileInput = new Scanner(new FileReader(f));
         }
@@ -26,15 +29,15 @@ public class CreateIndex {
             String line = fileInput.nextLine();
             String[] words = line.split(" ");
             for(String tmp : words) {
-                if(index.get(tmp) == null) {
+                if(!index.containsKey(tmp)) {
                     LinkedList<Integer> lines = new LinkedList<Integer>();
                     lines.add(lineNumber);
-                    index.put(tmp, lines);
+                    this.index.put(tmp, lines);
                 }
                 else {
                     LinkedList<Integer> lines = index.get(tmp);
                     lines.add(lineNumber);
-                    index.put(tmp, lines);
+                    this.index.put(tmp, lines);
                 }
             }
             lineNumber++;
@@ -63,7 +66,6 @@ public class CreateIndex {
                     numbers += Integer.toString(listIterator.next()) + " ";
                 }
                 System.out.println(pair.getKey() + " " + numbers);
-                it.remove();
             }
         }
         catch (Exception ex) {

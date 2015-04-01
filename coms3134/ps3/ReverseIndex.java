@@ -10,7 +10,7 @@ import java.util.Map.Entry;
 import java.util.TreeMap;
 
 public class ReverseIndex {
-
+ 
     public static Map<String, LinkedList<Integer>> readFile(File f) {
         Scanner fileInput = null;
         Map<String, LinkedList<Integer>> index = new HashMap<String, LinkedList<Integer>>();
@@ -25,7 +25,7 @@ public class ReverseIndex {
             String line = fileInput.nextLine();
             String[] words = line.split(" ");
             for(String tmp : words) {
-                if(index.get(tmp) == null) {
+                if(!index.containsKey(tmp)) {
                     LinkedList<Integer> lines = new LinkedList<Integer>();
                     lines.add(lineNumber);
                     index.put(tmp, lines);
@@ -82,7 +82,6 @@ public class ReverseIndex {
                     content += listIterator.next() + " ";
                 }
                 System.out.println(Integer.toString(pair.getKey()) + " " + content);
-                it.remove();
             }
         }
         catch (Exception ex) {
