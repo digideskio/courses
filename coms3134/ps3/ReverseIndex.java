@@ -48,15 +48,17 @@ public class ReverseIndex {
  
     public static void main(String[] args) {
         String fileName = args[0];
-        CreateIndex create = new CreateIndex();
+        File f = null;
         try {
-            File f = new File(fileName);
-            Map<String, LinkedList<Integer>> index = create.readFile(f);
-            Map<Integer, LinkedList<String>> reversedIndex = reverse(index);
-            printIndex(reversedIndex);
+            f = new File(fileName);
         }
         catch (Exception ex) {
             ex.printStackTrace();
         }
+        CreateIndex create = new CreateIndex();
+        create.readFile(f);
+        Map<String, LinkedList<Integer>> index = create.getCreateIndex();
+        Map<Integer, LinkedList<String>> reversedIndex = reverse(index);
+        printIndex(reversedIndex);
     }
 }

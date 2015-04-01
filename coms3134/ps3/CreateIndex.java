@@ -16,7 +16,7 @@ public class CreateIndex {
         index = new HashMap<String, LinkedList<Integer>>();
     }
  
-    public Map<String, LinkedList<Integer>> readFile(File f) {
+    public void readFile(File f) {
         Scanner fileInput = null;
         try {
             fileInput = new Scanner(new FileReader(f));
@@ -43,11 +43,10 @@ public class CreateIndex {
             lineNumber++;
         }
         fileInput.close();
-        return index;
     }
  
-    public void printIndex(Map<String, LinkedList<Integer>> map) {
-        Iterator<Entry<String, LinkedList<Integer>>> it = index.entrySet().iterator();
+    public void printIndex() {
+        Iterator<Entry<String, LinkedList<Integer>>> it = this.index.entrySet().iterator();
         while (it.hasNext()) {
             Map.Entry<String, LinkedList<Integer>> pair = (Map.Entry<String, LinkedList<Integer>>)it.next();
             LinkedList<Integer> lines = pair.getValue();
@@ -64,16 +63,21 @@ public class CreateIndex {
         return index.get(word);
     }
  
+    public Map<String, LinkedList<Integer>> getCreateIndex() {
+        return index;
+    }
+ 
     public static void main(String[] args) {
         String fileName = args[0];
-        CreateIndex test = new CreateIndex();
+        File f = null;
         try {
-            File f = new File(fileName);
-            Map<String, LinkedList<Integer>> index = test.readFile(f);
-            test.printIndex(index);
+            f = new File(fileName);
         }
         catch (Exception ex) {
             ex.printStackTrace();
         }
+        CreateIndex test = new CreateIndex();
+        test.readFile(f);
+        test.printIndex();
     }
 }
