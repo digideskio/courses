@@ -46,6 +46,20 @@ public class CreateIndex {
         return index;
     }
  
+    public void printIndex(Map<String, LinkedList<Integer>> map) {
+        Iterator<Entry<String, LinkedList<Integer>>> it = index.entrySet().iterator();
+        while (it.hasNext()) {
+            Map.Entry<String, LinkedList<Integer>> pair = (Map.Entry<String, LinkedList<Integer>>)it.next();
+            LinkedList<Integer> lines = pair.getValue();
+            ListIterator<Integer> listIterator = lines.listIterator();
+            String numbers = "";
+            while (listIterator.hasNext()) {
+                numbers += Integer.toString(listIterator.next()) + " ";
+            }
+            System.out.println(pair.getKey() + " " + numbers);
+        }
+    }
+ 
     public LinkedList<Integer> getIndex(String word) {
         return index.get(word);
     }
@@ -56,17 +70,7 @@ public class CreateIndex {
         try {
             File f = new File(fileName);
             Map<String, LinkedList<Integer>> index = test.readFile(f);
-            Iterator<Entry<String, LinkedList<Integer>>> it = index.entrySet().iterator();
-            while (it.hasNext()) {
-                Map.Entry<String, LinkedList<Integer>> pair = (Map.Entry<String, LinkedList<Integer>>)it.next();
-                LinkedList<Integer> lines = pair.getValue();
-                ListIterator<Integer> listIterator = lines.listIterator();
-                String numbers = "";
-                while (listIterator.hasNext()) {
-                    numbers += Integer.toString(listIterator.next()) + " ";
-                }
-                System.out.println(pair.getKey() + " " + numbers);
-            }
+            test.printIndex(index);
         }
         catch (Exception ex) {
             ex.printStackTrace();
