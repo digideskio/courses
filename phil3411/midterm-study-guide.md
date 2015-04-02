@@ -143,7 +143,27 @@
   - Interpret each P so that (x<sub>1</sub>, …, x<sub>n</sub>) ∈ π(P) iff P(c<sub>1</sub>, …, c<sub>n</sub>) = T (on the given truth-value assignment) for some c<sub>1</sub>, …, c<sub>n</sub> such that δ(c<sub>i</sub>) = x<sub>i</sub> for each i = 1, …, n
   - In PC<sub>0</sub>, only tautologies are logically true
 - A is logically true iff A is true on every interpretation
-- A is logically false if A is false on every interpretation
-- A is logically implied if there is no interpretation on which all members of Γ are T but A is F
+- A is logically false iff A is false on every interpretation
+- A is logically implied iff there is no interpretation on which all members of Γ are T but A is F
 - Thus, in PC<sub>0</sub>, a formula A is logically true iff A is a tautology
   - In PC<sub>0</sub>, a formula A is logically implied by a set of formulas Γ iff A is tautologically implied by Γ
+
+##ADDING EQUALITY
+- Equality can be represented as a distinguished binary predicate, ≈
+  - a ≈ b, not ≈(a, b)
+  - a ≈ b is T iff δ(a) = δ(b)
+- Equality is always represented as identity; its interpretation is fixed
+  - As a result, we have some logical truths that are not tautologies (and some logically valid arguments which are not tautologically valid):
+    - a ≈ a
+    - a ≈ b → b ≈ a
+    - ≈ b ∧ b ≈ c → a ≈ c
+    - ⊨ a ≈ a
+    - a ≈ b ⊨ b ≈ a
+    - c ≈ c' ⊨ A ↔ A’, where A’ is obtained from A by replacing one or more occurrences of c by c’ (Extensionality Principle)
+
+##PROOF BY CONTRADICTION LAWS
+- The top-down derivation rules must be extended to reflect ≈
+  - EQ1, Trivial Validity: Γ, ¬(c ≈ c) ⊨ ⊥
+  - ESL, Equality Subst.: Γ, c ≈ c' ⊨ ⊥ ⇔ Γ', c ≈ c' ⊨ ⊥
+- Apply ESL first
+- After ESL, c does not occur anywhere except c ≈ c'
