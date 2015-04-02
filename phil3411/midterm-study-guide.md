@@ -20,8 +20,8 @@
   - If A  ⊨ B and B ≡ B’, then A ⊨ B'
 - A list of sentential expressions tautologically implies a sentential expression B iff, in a truth table that contains columns for all of the expressions, there is no row in which all of the A’s is T while the value of B is F
   - A list of sentences tautologically implies a sentence B iff all of the sentences can be written as sentential expressions for which the implication holds
-  - Notation: A1, …, An ⊨ B
-  - Corollary: A1, …, An ⊨ B iff A1 ∧ … ∧ An ⊨ B
+  - Notation: A<sub>1</sub>, …, A<sub>n</sub> ⊨ B
+  - Corollary: A<sub>1</sub>, …, A<sub>n</sub> ⊨ B iff A<sub>1</sub> ∧ … ∧ A<sub>n</sub> ⊨ B
   - If n = 0, we write ⊨ B
   - ⊨ B iff B is a tautology
 
@@ -40,7 +40,7 @@
 - **Consequence Addition**: If Γ ⊨ A, then Γ, A ⊨ C iff Γ ⊨ C
   - Example: Since P, Q ⊨ P ∧ Q, we have P, Q, P ∧ Q ⊨ C iff P, Q ⊨ C
 - **Disjoining**: Γ, A, A → B ⊨ C iff Γ, A, B ⊨ C
-- C**onjunction Premise (∧, ⊨)**: Γ, A ∧ B ⊨ C iff Γ, A, B ⊨ C
+- **Conjunction Premise (∧, ⊨)**: Γ, A ∧ B ⊨ C iff Γ, A, B ⊨ C
   - The order does not matter
     - Γ, A ∧ B ⊨ C iff Γ, A, B ⊨ C iff Γ, B, A ⊨ C
 - **Conjunction Conclusion Law (⊨, ∧)**: Γ ⊨ A ∧ B iff Γ ⊨ A and Γ ⊨ B
@@ -103,3 +103,47 @@
   - John, Barack Obama, the moon, 75
 - Predicates (general terms) correspond to adjectives, verbs, common nouns, noun phrases, etc., and stand for properties or relations
   - …is happy/is a man/runs/is greater than/introduced… to ...
+
+##PREDICATE LOGIC WITHOUT QUANTIFIERS
+- The vocabulary of PC<sub>0</sub> consists of:
+  - A set of individual constants a, b, c, …, that symbolize singular terms such as names (“John,” “Mary”) and definite descriptions (“the moon,” “my brother”)
+  - A set of predicates P, Q, R, …, that symbolize qualifying phrases involving adjectives (“is happy,” “was taller than”), nouns (“is a philosopher,” “will be a famous magician”), and verbs (“is walking,” “loves”)
+    - A predicate is said to be unary, binary, etc., if it needs to combine with one, two, etc., singular terms to yield a sentence
+  - The five connectives (¬, ∧, ∨, →, ↔)
+- The grammar of PC<sub>0</sub> defines which strings of symbols count as well-formed sentences:
+  - Atomic sentences—if P is an n-place predicate constant and c<sub>1</sub>, …, c<sub>n</sub> are individual constants, then P(c<sub>1</sub>, …, c<sub>n</sub>) is an atomic sentence
+  - Compound sentences—if A is a sentence, then so is ¬A; if A and B are sentences, then so are A ∧ B, A ∨ B, A → B, A ↔ B
+
+##SEMANTICS OF PREDICATE LOGIC
+- An interpretation (also called a model) is determined by:
+  - A domain of discourse (i.e., the set of all people in the room)
+  - An assignment of denotations to the individual constants: the denotation of constant c is the object c in the domain
+    - Some objects may have no names, and two names may denote the same object
+  - An assignment of extensions to the predicates
+    - If P is a one-place predicate, then its extension is a subset P of the domain
+    - If P is an n-place predicate for n > 1, then its extension is a n-ary relation P in the domain of discourse
+    - Some sets and relations may not be the extension of any predicates, and two predicates may have overlapping or even identical extensions
+
+##SETS
+- **Set**—can be described by enumerating its members or by specifying a predicate/condition that identifies its members
+- **Extensionality Axiom**: A set is completely determined by its members; thus, order and repetition do not matter
+- **Sequence**—by contrast, order and repetitions do matter
+- An n-ary relation can be identified with a set of ordered n-tuples (i.e., finite sequences of length n)
+
+##PROPERTIES OF PC<sub>0</sub>
+- **FACT 1**: Every interpretation determines a truth-value assignment:
+  - Atomic sentences
+    - P(c<sub>1</sub>, ..., c<sub>n</sub>) is T (in the interpretation) iff (δ(c<sub>1</sub>), ..., δ(c<sub>n</sub>)) ∈ π(P)
+  - Compound sentences
+    - ¬A is T iff A is F
+    - A ∧ B is T iff A is T and B is T
+  - In PC<sub>0</sub>, all tautologies are logically true
+- **FACT 2**: Every truth-value assignment determines an interpretation
+  - Interpret different names as different objects
+  - Interpret each P so that (x<sub>1</sub>, …, x<sub>n</sub>) ∈ π(P) iff P(c<sub>1</sub>, …, c<sub>n</sub>) = T (on the given truth-value assignment) for some c<sub>1</sub>, …, c<sub>n</sub> such that δ(c<sub>i</sub>) = x<sub>i</sub> for each i = 1, …, n
+  - In PC<sub>0</sub>, only tautologies are logically true
+- A is logically true iff A is true on every interpretation
+- A is logically false if A is false on every interpretation
+- A is logically implied if there is no interpretation on which all members of Γ are T but A is F
+- Thus, in PC<sub>0</sub>, a formula A is logically true iff A is a tautology
+  - In PC<sub>0</sub>, a formula A is logically implied by a set of formulas Γ iff A is tautologically implied by Γ
