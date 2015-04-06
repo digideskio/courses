@@ -1,0 +1,39 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1in]{geometry}
+
+\title{Discrete Math: Problem Set 4}
+\author{Jackie Luo}
+\date{April 8, 2015}
+
+\begin{document}
+\maketitle
+
+\section{6.1, 6}
+$4 \times 6 = 24$ major auto routes, using the product rule
+
+\section{6.1, 28}
+$10 \times 10 \times 10 \times 26 \times 26 \times 26 + 10 \times 10 \times 10 \times 26 \times 26 \times 26$ = 35152000 license plates
+\newline
+You can get 35152000 license plates using either three digits followed by three uppercase English letters or three uppercase English letters followed by three digits because there are 10 possible digits and 26 possible letters. Using the product rule, for each character in the license plate number (in this case, six total), there is a number of possible options that can be multiplied by the other options. Then, with the sum rule, you add the number of license plates with three digits first and then three letters to the number of license plates with letters first and then digits, as none of the ways in the two categories overlap.
+
+\section{6.1, 48}
+$2^5 + 2^4 - 2^2 = 44$ strings
+\newline
+Since bit strings can only contains 0s or 1s, there are $2^7$ different bit strings of length seven possible. When you have a set value for any of the characters, you can find the total number of bit strings possible with the product rule. For strings with the first two digits as 0s, you have $1 \times 1 \times 2 \times 2 \times 2 \times 2 \times 2$, or $2^5$ strings. Similarly, for strings with the last three digits as 1s, you have $2^4$ strings. You can use the sum rule to add the two for the total number of strings. However, you also need to subtract the overlapping strings, as it's possible to have strings with two 0s at the start and three 1s at the end. That number is $1 \times 1 \times 2 \times 2 \times 1 \times 1 \times 1$, or $2^2$, so the answer is $2^5 + 2^4 - 2^2$.
+
+\section{6.1, 56}
+$(26 + 26 + 1) \times (26 + 26 + 10 + 1) \times (26 + 26 + 10 + 1) \times (26 + 26 + 10 + 1) \times (26 + 26 + 10 + 1) \times (26 + 26 + 10 + 1) \times (26 + 26 + 10 + 1) \times (26 + 26 + 10 + 1) + (26 + 26 + 1) \times (26 + 26 + 10 + 1) \times (26 + 26 + 10 + 1) \times (26 + 26 + 10 + 1) \times (26 + 26 + 10 + 1) \times (26 + 26 + 10 + 1) \times (26 + 26 + 10 + 1) + (26 + 26 + 1) \times (26 + 26 + 10 + 1) \times (26 + 26 + 10 + 1) \times (26 + 26 + 10 + 1) \times (26 + 26 + 10 + 1) \times (26 + 26 + 10 + 1) + (26 + 26 + 1) \times (26 + 26 + 10 + 1) \times (26 + 26 + 10 + 1) \times (26 + 26 + 10 + 1) \times (26 + 26 + 10 + 1) + (26 + 26 + 1) \times (26 + 26 + 10 + 1) \times (26 + 26 + 10 + 1) \times (26 + 26 + 10 + 1) + (26 + 26 + 1) \times (26 + 26 + 10 + 1) \times (26 + 26 + 10 + 1) + (26 + 26 + 1) \times (26 + 26 + 10 + 1) + (26 + 26 + 1) = 2.12132159 \times 10^{14}$ variables
+\newline
+The first character can be 53 possible options (26 lowercase letters, 26 uppercase letters, 1 underscore) and all subsequent characters can be 63 options (previous, plus 10 digits). Using the product rule, the number of possible strings for a string of length $n$ can be found with $53 + 63^{n - 1}$. For strings ranging from length one to eight, you can use the sum rule to add the number of possible strings for each length for the total number of possible variable names.
+
+\section{6.2, 6}
+The range of possible remainders for dividing by $d$ is $d$ (0 to $d - 1$). As a result, by the pigeonhole principle, among any group of $d + 1$ integers, two must have the exact same remainder upon division by $d$ (there are more integers than there are possible remainders, as $d$ is greater than $d - 1$).
+
+\section{6.2, 16}
+At least 5 numbers must be selected from the set to guarantee that at least one pair adds up to 16. For the largest numbers, of course, only two numbers would need to be selected (i.e., 13 and 15). However, if you assume the worst-case scenario, like choosing the smallest number each time, you would have to choose every number from 1 to 9, and then you would have the pair 7 and 16, which add up to 16.
+
+\section{6.2, 18a}
+In a group of 9 students in a discrete mathematics class, there must be at least 5 male students or 5 female students because, using to the pigeonhole principle, there are 9 objects and 2 pigeonholes (the two genders). The most even distribution you can get for the two is 5 of one gender and 4 of the other, and that means there will always be at least 5 students who are male or 5 students who are female in the class.
+
+\end{document}
