@@ -36,4 +36,31 @@ At least 5 numbers must be selected from the set to guarantee that at least one 
 \section{6.2, 18a}
 In a group of 9 students in a discrete mathematics class, there must be at least 5 male students or 5 female students because, using to the pigeonhole principle, there are 9 objects and 2 pigeonholes (the two genders). The most even distribution you can get for the two is 5 of one gender and 4 of the other, and that means there will always be at least 5 students who are male or 5 students who are female in the class.
 
+\section{6.3, 6f}
+$C(12, 6) = 12!/(6! \times (12 - 6)!) = 479001600/(720 \times 720) = 924$
+
+\section{6.3, 28}
+$C(40, 17) = 40!/(17! \times (40 - 17)!) = 88732378800 answer keys
+
+\section{6.3, 30a}
+$C(16, 5) - C(9, 5) = 16!/(5! \times (16 - 5)!) - 9!/(5! \times (9 - 5)!) = 4368 - 126 = 4242$ ways
+\newline
+$C(16, 5)$ is the number of ways to choose five members for the committee out of the faculty. $C(9, 5)$, on the other hand, is the number of ways to choose five members for the committee that are all male. As a result, the difference between the two is the number of ways to choose at least one female to be on the committee of five.
+
+\section{6.3, 32c}
+In a string of six letters, $a$ and $b$ can be consecutive in five ways:
+\newline
+abxxxx
+\newline
+xabxxx
+\newline
+xxabxx
+\newline
+xxxabx
+\newline
+xxxxab
+\newline
+Since the other characters must all be unique, you can use the product rule for each of them. The first can be 24 possible letters ($26 - 2$), then 23, then 22, then 21. Thus, the total number of strings that meet the listed requirements is $5 \times 24 \times 23 \times 22 \times 21$, or $1275120$.
+
+
 \end{document}
