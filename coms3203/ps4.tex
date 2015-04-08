@@ -40,7 +40,7 @@ In a group of 9 students in a discrete mathematics class, there must be at least
 $C(12, 6) = 12!/(6! \times (12 - 6)!) = 479001600/(720 \times 720) = 924$
 
 \section{6.3, 28}
-$C(40, 17) = 40!/(17! \times (40 - 17)!) = 88732378800 answer keys
+$C(40, 17) = 40!/(17! \times (40 - 17)!) = 88732378800$ answer keys
 
 \section{6.3, 30a}
 $C(16, 5) - C(9, 5) = 16!/(5! \times (16 - 5)!) - 9!/(5! \times (9 - 5)!) = 4368 - 126 = 4242$ ways
@@ -62,5 +62,62 @@ xxxxab
 \newline
 Since the other characters must all be unique, you can use the product rule for each of them. The first can be 24 possible letters ($26 - 2$), then 23, then 22, then 21. Thus, the total number of strings that meet the listed requirements is $5 \times 24 \times 23 \times 22 \times 21$, or $1275120$.
 
+\section{6.4, 14}
+${n \choose 0} = n!/(0! \times n!) = 1
+\newline
+{n \choose n} = n!/(n! \times 0!) = 1
+\newline
+{n \choose {m + 1}} = n!/((m + 1)! \times (n - m - 1)!) = (n - m)/(m + 1) \times n!/(m! \times (n - m)!) = (n - m)/(m + 1) \times {n \choose m}$
+\newline
+You can see that ${n \choose {m + 1}} > {n \choose m}$ if and only if $(n - m)/(m + 1) > 1$. That can be simplified to $m < (n - 1)/2$. If $n$ is even, $m < n/2$, and if $n$ is odd, $m < \left \lfloor{n/2}\right \rfloor$. Conversely, ${n \choose {m + 1}} < {n \choose m}$ if and only if $m > (n - 1)/2$. If $n$ is even, $m \geq n/2$, and if $n$ is odd, $m \geq \left \lceil{n/2}\right \rceil$. ${n \choose {m + 1}} = {n \choose m}$ if and only if $m = n/2 + 12$. That can only happen if $n$ is odd; here, ${n \choose \left \lfloor{n/2}\right \rfloor} = {n \choose \left \lceil{n/2}\right \rceil}$.
+
+\section{6.4, 16}
+
+\section{6.4, 20}
+${{n - 1} \choose {k - 1}} {n \choose {k + 1}} {{n + 1} \choose k} = {{n - 1} \choose k} {n \choose {k - 1}} {{n + 1} \choose {k + 1}}
+\newline
+(n - 1)!/(k - 1)!(n - k)! \times n!/(k + 1)!(n - k - 1)! \times (n + 1)!/k!(n + 1 - k!)! = (n - 1)!/k!(n - k - 1)! \times n!/(k - 1)!(n + 1 - k)! \times (n + 1)!/(k + 1)!(n - k)!
+\newline
+1 = 1$
+
+\section{6.5, 10a}
+C(6 + 12 - 1, 12) = C(6 + 12 - 1, 6 - 1) = C(17, 12) = C(17, 5) = $17!/5!(17 - 5)!$ = 6188 ways
+
+\section{6.5, 10d}
+No broccoli croissants:
+\newline
+C(5 + 24 - 1, 24) = 20475 ways
+\newline
+One broccoli croissant:
+\newline
+C(5 + 23 - 1, 23) = 17550 ways
+\newline
+Two broccoli croissants:
+\newline
+C(5 + 22 - 1, 22) = 14950 ways
+\newline
+Using the sum rule, the total number of ways is 20475 + 17550 + 14950, or 52975 ways.
+
+\section{6.5, 14}
+${20 \choose 3}$ = 1140 ways
+\newline
+Essentially, the problem is asking the number of ways you can place dividers for 17 numbers, as all of the numbers must be less than or equal to 17, since they're nonnegative.
+
+\section{6.5, 22}
+C(6 + 12 - 1, 12) = $17!/12!(17 - 12)!$ = 6188 ways
+
+\section{6.5, 32}
+If all three A's must be consecutive, for the purpose of the question, we can treat them as one unit. The total with repetition would be $6!$, but in this case, one letter (R) is repeated, so the total number of ways is $6!/2!$, or 360.
+
+\section{6.5, 50}
+$\sum\limits_{j = 1}^3 S(5, j) = S(5, 1) + S(5, 2) + S(5, 3)
+\newline
+S(5, 1) = 1/1! \sum\limits_{i = 0}^{1 - 1} (-1)^i {1 \choose i} (1 - i)^5 = 1
+\newline
+S(5, 2) = 1/2! \sum\limits_{i = 0}^{2 - 1} (-1)^i {2 \choose i} (2 - i)^5 = 15
+\newline
+S(5, 3) = 1/3! \sum\limits_{i = 0}^{3 - 1} (-1)^i {3 \choose i} (3 - i)^5 = 25$
+\newline
+Using the sum role, the total number of ways is 1 + 15 + 25, or 41.
 
 \end{document}
