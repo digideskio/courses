@@ -7,7 +7,7 @@ public class MergeSort {
         T[] tmp = (T[]) new Comparable[a.length];
         for (int size = 1; size < a.length; size *= 2) {
             for (int start = 0; start < a.length - size; start += size * 2) {
-                merge(a, tmp, start, start + size - 1,
+                merge(a, tmp, start, start + size,
                 		Math.min(start + size * 2 - 1, a.length - 1));
             }
         }
