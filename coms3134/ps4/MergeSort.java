@@ -1,7 +1,12 @@
 import java.util.Arrays;
 
 public class MergeSort {
-  
+ 
+    // The sort() method implements a non-recursive MergeSort by looping
+	// through increasingly large adjacent groups of values. Here, the size
+	// starts at one and doubles each iteration. The inner for loop sets the
+	// "start" points for each group and calls the merge() method for the
+	// adjacent blocks.
     @SuppressWarnings("unchecked")
     public static <T extends Comparable<T>> void sort(T[] a) {
         T[] tmp = (T[]) new Comparable[a.length];
