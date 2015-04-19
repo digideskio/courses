@@ -8,11 +8,18 @@ public class KBestCounter<T extends Comparable<T>> {
     private int k;
     private PriorityQueue<T> kBest;
  
+    // The constructor takes the user's chosen value for k and sets the
+    // static variable k to that value, then initializes the PriorityQueue
+    // (min heap) with initial quantity k.
     public KBestCounter(int chosenK) {
         k = chosenK;
         kBest = new PriorityQueue<T>(k);
     }
  
+    // The count() method takes an object x and first checks if kBest has
+    // been filled. If so, it compares x to the head (the minimum value
+    // in kBest). If x is larger, then the head is removed and x is added.
+    // If kBest has fewer than k values, then x is added directly.
     public void count(T x) {
         if(kBest.size() == k) {
             T head = kBest.peek();
@@ -25,6 +32,12 @@ public class KBestCounter<T extends Comparable<T>> {
             kBest.add(x);
     }
  
+    // The kbest() method converts kBest at the time it is called to a List
+    // (in this case, a LinkedList). A copy of kBest is created so that the
+    // original is unmodified. Then, the LinkedList is initialized. The
+    // copy of kBest (tmp) is used to fill the LinkedList with values from
+    // greatest to least by calling poll(), which removes the head (min
+    // value), and adding that value to the front of the LinkedList.
     public List<T> kbest() {
         PriorityQueue<T> tmp = new PriorityQueue<T>(k);
         Iterator<T> it = kBest.iterator();
