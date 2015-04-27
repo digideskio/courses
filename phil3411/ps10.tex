@@ -1,0 +1,91 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1in]{geometry}
+
+\title{Symbolic Logic: Homework 10}
+\author{Jackie Luo}
+\date{April 16, 2015}
+
+\begin{document}
+
+\maketitle
+
+\section{8.1}
+\subsection{}
+$x$ is the mother of $y$.
+\newline
+$F(x) \wedge \exists_z[C(y, x, z)]$
+\newline
+
+\subsection{}
+$x$ is the sister of $y$.
+\newline
+$F(x) \wedge \neg x \approx y \wedge \exists_z \exists_w[C(x, z, w) \wedge C(y, z, w)]$
+
+\subsection{}
+$x$ and $y$ are first cousins.
+\newline
+$\exists_z \exists_w[\exists_u \exists_v[C(z, u, v) \wedge C(w, u, v)] \wedge \neg z \approx w \wedge \exists_s \exists_t[C(x, z, s) \wedge C(y, w, t)]]$
+
+\subsection{}
+$x$ is $y$'s nephew.
+\newline
+$\exists_z[\exists_w[C(x, z, w)] \wedge \exists_u \exists_v[C(z, u, v) \wedge C(y, u, v)] \wedge \neg y \approx z] \wedge M(x)$
+
+\subsection{}
+$x$ is $y$'s maternal grandmother.
+\newline
+$\exists_z[F(z) \wedge \exists_w[C(z, x, w)] \wedge \exists_v[C(y, z, v)]] \wedge F(X)$
+
+\section{8.4}
+\subsection{}
+For every $x$, if $x$ is a man, then if and only if Claire likes $x$, Edith likes $x$.
+\newline
+$\forall_x[M(x) \to (L(c, x) \iff L(e, x))]$
+
+\subsection{}
+For every $x$, if $x$ is a woman and $x$ likes Jack, then $x$ does not like Harry.
+\newline
+$\forall_x[F(x) \wedge L(x, j) \to \neg L(x, h)]$
+
+\subsection{}
+For every $x$, if $x$ is a woman and $x$ is not Ann, then Harry and David do not both like $x$, and Harry likes Ann and David likes Ann.
+\newline
+$\forall_x[F(x) \wedge \neg x \approx a \to \neg (L(h, x) \wedge L(d, x))] \wedge L(h, a) \wedge L(d, a)$
+
+\subsection{}
+If David is happy, there exists $x$ such that $x$ is a woman and $x$ likes David and $y$ such that $y$ is a woman and $y$ likes David, and $\neg x \approx y$.
+\newline
+$H(d) \to \exists_x \exists_y[F(x) \wedge F(y) \wedge L(x, d) \wedge L(y, d)]$
+
+\subsection{}
+For every $x$, if $x$ is a woman and $x$ is not Edith, there exists $y$ such that $y$ is a man and $y$ does not like $x$ and $y$ likes Edith.
+\newline
+$\forall_x[F(x) \wedge \neg x \approx e \to \exists_y[M(y) \wedge \neg L(y, x) \wedge L(y, e)]]$
+
+\subsection{}
+There exists $x$ such that $x$ is a woman and Harry likes $x$ and, for all $y$, if $y$ is a man and $y$ is happy, $x$ likes $y$.
+\newline
+$\exists_x[F(x) \wedge L(h, x) \wedge \forall_y[M(y) \wedge H(y) \to L(x, y)]]$
+
+\subsection{}
+For every $x$, if $x$ is a man and $x$ is happy, there exists $y$ such as $y$ is a woman and $y$ likes $x$.
+\newline
+$\forall_x[M(x) \wedge H(x) \to \exists_y[F(y) \wedge L(y, x)]]$
+
+\subsection{}
+There exists $x$ such that $x$ is a man and, for all $y$, if $y$ is a woman and $y$ likes herself, then $x$ likes $y$.
+\newline
+$\exists_x[M(x) \wedge \forall_y[F(y) \wedge L(y, y) \to L(x, y)]]$
+
+\subsection{}
+For every $x$, if $x$ is a man and $x$ is happy, then there exists $y$ such that $y$ is a woman and $y$ is happy and $y$ likes $x$.
+\newline
+$\forall_x[M(x) \wedge H(x) \to \exists_y[F(y) \wedge H(y) \wedge L(y, x)]]$
+
+\subsection{}
+For every $x$, if $x$ is a man and there exists $y$ such that $y$ is a woman and $x$ likes $y$, then $x$ likes Ann.
+\newline
+$\forall_x[M(x) \wedge \exists_y[F(y) \wedge L(x, y)] \to L(x, a)]$
+
+\end{document}
