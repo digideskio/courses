@@ -76,6 +76,9 @@ public class GraphPanel extends JPanel {
     int x2 = Math.round(xFactor * (float) v.posX + (float) MARGIN_X);
     int y2 = Math.round(yFactor * (float) v.posY + (float) MARGIN_Y);
     g.drawLine(x1, y1, x2, y2);
+    g.drawString(String.format("%.1f", Math.sqrt((u.posX - v.posX) *
+        (u.posX - v.posX) + (u.posY - v.posY) * (u.posY - v.posY))),
+        (x1 + x2) / 2, (y1 + y2) / 2);
   }
 
 }

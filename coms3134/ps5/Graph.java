@@ -68,16 +68,29 @@ public class Graph {
   }
   
   public void addUndirectedEdge(String s, String t, Double cost) {
-	if (!vertices.containsKey(s))
-	  addVertex(s);
-	if (!vertices.containsKey(t))
-	  addVertex(t);
-	Vertex firstVertex = vertices.get(s);
-	Vertex secondVertex = vertices.get(t);
-	Edge firstEdge = new Edge(firstVertex, secondVertex, cost);
+    if (!vertices.containsKey(s))
+      addVertex(s);
+    if (!vertices.containsKey(t))
+      addVertex(t);
+    Vertex firstVertex = vertices.get(s);
+    Vertex secondVertex = vertices.get(t);
+    Edge firstEdge = new Edge(firstVertex, secondVertex, cost);
     Edge secondEdge = new Edge(secondVertex, firstVertex, cost);
     firstVertex.addEdge(firstEdge);
 	secondVertex.addEdge(secondEdge);
+  }
+  
+  public void computeEuclideanCosts() {
+    for (String u : vertices.keySet()) {
+      for (Edge e : vertices.get(u).getEdges()) {
+        int startX = vertices.get(u).posX;
+        int startY = vertices.get(u).posY;
+        int endX = vertices.get(e.targetVertex.name).posX;
+        int endY = vertices.get(e.targetVertex.name).posY;
+        e.cost = Math.sqrt(Math.pow((startX - endX), 2) +
+            Math.pow((startY - endY), 2));
+      }
+    }
   }
 
   /**
