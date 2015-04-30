@@ -1,6 +1,8 @@
 import java.util.Collection;
 import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.Map;
+import java.util.Queue;
 
 public class Graph {
 
@@ -91,6 +93,42 @@ public class Graph {
             Math.pow((startY - endY), 2));
       }
     }
+  }
+  
+  public void doBfs(String s) {
+    Queue<Vertex> q = new LinkedList<>();
+    Vertex start = vertices.get(s);
+    q.add(start);
+    start.distance = 0;
+    start.flag = true;
+    while (q.peek() != null) {
+      Vertex u = q.poll();
+      for (Edge e : u.getEdges()) {
+        Vertex v = e.targetVertex;
+        if (v.distance == Double.POSITIVE_INFINITY) {
+          v.distance = u.distance + 1;
+          v.flag = true;
+          v.prev = u;
+          q.add(v);
+        }
+      }
+    }
+  }
+
+  public Graph getUnweightedShortestPath(String s, String t) {
+    doBfs(s);
+    Graph graph = new Graph();
+    for (String u : vertices.keySet()) {
+      Vertex copy = new Vertex(u, getVertex(u).posX, getVertex(u).posY);
+      graph.addVertex(copy);
+    }
+    Vertex source = getVertex(s);
+    Vertex target = getVertex(t);
+    while (target != source) {
+      graph.addEdge(target.name, target.prev.name);
+      target = target.prev;
+    }
+    return graph;
   }
 
   /**

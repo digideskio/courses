@@ -6,6 +6,9 @@ public class Vertex {
   private List<Edge> adjacent;
   public int posX = 0;
   public int posY = 0;
+  public double distance = Double.POSITIVE_INFINITY;
+  public boolean flag = false;
+  public Vertex prev = null;
 
   /**
    * Construct a new vertex containing an adjacency list.
