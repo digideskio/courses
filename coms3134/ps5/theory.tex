@@ -288,4 +288,9 @@ H & 8 & 7 \\ \hline
 \end{tabular}
 \end{table}
 
+\subsection{}
+a. To detect if a graph is bipartite, we can modify the breadth-first search method to find whether the vertices of the graph can be separated into two disjoint sets. We traverse the graph with labels for unvisited points, points in the first set, and points in the second set. The starting point would be labeled as part of the first set, then the neighbors of that point would be labeled as part the second set, then the neighbors of these neighbors would be labeled as part of the first set again, and so on. During the traversal, if the search reaches a point with neighbors that have the same label that it has, then the algorithm can determine that the graph is not bipartite. If the whole graph is traversed without encountering the situation where a point has neighbors that have been visited and are labeled as part of its set, then the graph is bipartite.
+\newline
+b. Since a Hamiltonian cycle visits each vertex of a graph exactly once, a complete bipartite graph can only contain one if $|V_1| = |V_2|$. If we do assume that $|V_1| \neq |V_2|$, the Hamiltonian cycle would have to traverse between vertices in the two sets. With $|V_1| \neq |V_2|$, the cycle inevitably runs into a situation where two consecutive vertices are in the same set because the members of the sets can't be interspersed evenly, which can't be true for a Hamiltonian cycle. Thus, $|V_1| = |V_2|$ must be true for a Hamiltonian cycle in a complete bipartite graph.
+
 \end{document}
