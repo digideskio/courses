@@ -2,6 +2,7 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.Map;
+import java.util.PriorityQueue;
 import java.util.Queue;
 
 public class Graph {
@@ -97,9 +98,15 @@ public class Graph {
   
   public void doBfs(String s) {
     Queue<Vertex> q = new LinkedList<>();
+    for (String key : vertices.keySet()) {
+      Vertex cur = getVertex(key);
+      cur.distance = Double.POSITIVE_INFINITY;
+      cur.flag = false;
+      cur.prev = null;
+    }
     Vertex start = vertices.get(s);
     q.add(start);
-    start.distance = 0;
+    start.distance = 0.0;
     start.flag = true;
     while (q.peek() != null) {
       Vertex u = q.poll();
@@ -128,6 +135,52 @@ public class Graph {
       graph.addEdge(target.name, target.prev.name);
       target = target.prev;
     }
+    return graph;
+  }
+
+  public void doDijkstra(String s) {
+    PriorityQueue<Vertex> q = new PriorityQueue<Vertex>();
+    for (String key : vertices.keySet()) {
+      Vertex cur = getVertex(key);
+      cur.distance = Double.POSITIVE_INFINITY;
+      cur.flag = false;
+      cur.prev = null;
+    }
+    Vertex start = vertices.get(s);
+    q.add(start);
+    start.distance = 0.0;
+    start.flag = true;
+    while (q.peek() != null) {
+      Vertex u = q.poll();
+      u.flag = true;
+      for (Edge e : u.getEdges()) {
+        Vertex v = e.targetVertex;
+        if (!v.flag) {
+          q.remove(v);
+          if (u.distance + e.cost < v.distance) {
+            v.distance = u.distance + e.cost;
+            v.prev = u;
+          }
+          q.add(v);
+        }
+      }
+    }
+  }
+
+  public Graph getWeightedShortestPath(String s, String t) {
+    doDijkstra(s);
+    Graph graph = new Graph();
+    for (String u : vertices.keySet()) {
+      Vertex copy = new Vertex(u, getVertex(u).posX, getVertex(u).posY);
+      graph.addVertex(copy);
+    }
+    Vertex source = getVertex(s);
+    Vertex target = getVertex(t);
+    while (target != source) {
+      graph.addEdge(target.name, target.prev.name);
+      target = target.prev;
+    }
+    graph.computeEuclideanCosts();
     return graph;
   }
 

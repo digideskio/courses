@@ -1,14 +1,14 @@
 import java.util.LinkedList;
 import java.util.List;
 
-public class Vertex {
+public class Vertex implements Comparable<Vertex> {
   public String name;
   private List<Edge> adjacent;
   public int posX = 0;
   public int posY = 0;
-  public double distance = Double.POSITIVE_INFINITY;
-  public boolean flag = false;
-  public Vertex prev = null;
+  public Double distance;
+  public boolean flag;
+  public Vertex prev;
 
   /**
    * Construct a new vertex containing an adjacency list.
@@ -59,5 +59,9 @@ public class Vertex {
   public String toString() {
     return name;
   }
+
+public int compareTo(Vertex o) {
+    return distance.compareTo(o.distance);
+}
 
 }
