@@ -6,7 +6,7 @@ public class Vertex implements Comparable<Vertex> {
   private List<Edge> adjacent;
   public int posX = 0;
   public int posY = 0;
-  public Double distance;
+  public Double cost;
   public boolean flag;
   public Vertex prev;
 
@@ -61,7 +61,7 @@ public class Vertex implements Comparable<Vertex> {
   }
 
 public int compareTo(Vertex o) {
-    return distance.compareTo(o.distance);
+    return cost.compareTo(o.cost);
 }
 
 }

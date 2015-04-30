@@ -100,20 +100,20 @@ public class Graph {
     Queue<Vertex> q = new LinkedList<>();
     for (String key : vertices.keySet()) {
       Vertex cur = getVertex(key);
-      cur.distance = Double.POSITIVE_INFINITY;
+      cur.cost = Double.POSITIVE_INFINITY;
       cur.flag = false;
       cur.prev = null;
     }
-    Vertex start = vertices.get(s);
-    q.add(start);
-    start.distance = 0.0;
+    Vertex start = getVertex(s);
+    start.cost = 0.0;
     start.flag = true;
+    q.add(start);
     while (q.peek() != null) {
       Vertex u = q.poll();
       for (Edge e : u.getEdges()) {
         Vertex v = e.targetVertex;
-        if (v.distance == Double.POSITIVE_INFINITY) {
-          v.distance = u.distance + 1;
+        if (v.cost == Double.POSITIVE_INFINITY) {
+          v.cost = u.cost + 1;
           v.flag = true;
           v.prev = u;
           q.add(v);
@@ -142,14 +142,14 @@ public class Graph {
     PriorityQueue<Vertex> q = new PriorityQueue<Vertex>();
     for (String key : vertices.keySet()) {
       Vertex cur = getVertex(key);
-      cur.distance = Double.POSITIVE_INFINITY;
+      cur.cost = Double.POSITIVE_INFINITY;
       cur.flag = false;
       cur.prev = null;
     }
-    Vertex start = vertices.get(s);
-    q.add(start);
-    start.distance = 0.0;
+    Vertex start = getVertex(s);
+    start.cost = 0.0;
     start.flag = true;
+    q.add(start);
     while (q.peek() != null) {
       Vertex u = q.poll();
       u.flag = true;
@@ -157,8 +157,8 @@ public class Graph {
         Vertex v = e.targetVertex;
         if (!v.flag) {
           q.remove(v);
-          if (u.distance + e.cost < v.distance) {
-            v.distance = u.distance + e.cost;
+          if (u.cost + e.cost < v.cost) {
+            v.cost = u.cost + e.cost;
             v.prev = u;
           }
           q.add(v);
@@ -179,6 +179,50 @@ public class Graph {
     while (target != source) {
       graph.addEdge(target.name, target.prev.name);
       target = target.prev;
+    }
+    graph.computeEuclideanCosts();
+    return graph;
+  }
+
+  public void doPrim(String s) {
+    PriorityQueue<Vertex> q = new PriorityQueue<Vertex>();
+    for (String key : vertices.keySet()) {
+      Vertex cur = getVertex(key);
+      cur.cost = Double.POSITIVE_INFINITY;
+      cur.flag = false;
+      cur.prev = null;
+    }
+    Vertex start = getVertex(s);
+    start.cost = 0.0;
+    start.flag = true;
+    q.add(start);
+    while (q.peek() != null) {
+      Vertex u = q.poll();
+      u.flag = true;
+      for (Edge e : u.getEdges()) {
+        Vertex v = e.targetVertex;
+        if (!v.flag) {
+          q.remove(v);
+          if (e.cost < v.cost) {
+            v.cost = e.cost;
+            v.prev = u;
+          }
+          q.add(v);
+        }
+      }
+    }
+  }
+
+  public Graph getMinimumSpanningTree(String s) {
+    doPrim(s);
+    Graph graph = new Graph();
+    for (String u : vertices.keySet()) {
+      Vertex copy = new Vertex(u, getVertex(u).posX, getVertex(u).posY);
+      graph.addVertex(copy);
+    }
+    for (String city : vertices.keySet()) {
+      if (getVertex(city).prev != null)
+        graph.addUndirectedEdge(city, getVertex(city).prev.name, 1.0);
     }
     graph.computeEuclideanCosts();
     return graph;
