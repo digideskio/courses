@@ -32,6 +32,8 @@ public class AutoCorrector {
         if (dictionary.contains(word))
             return word;
         String prefix = dictionary.getPrefix(word);
+        if (prefix.isEmpty())
+            return null;
         LinkedList<String> words = dictionary.buildList(prefix);
         ListIterator<String> it = words.listIterator();
         String correctWord = null;
