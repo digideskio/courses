@@ -1,6 +1,12 @@
+import java.util.LinkedList;
+
 public class PrefixTree {
 
-    Node root;
+    public Node root;
+
+    public PrefixTree() {
+        root = new Node('0');
+    }
 
     public PrefixTree(Node n) {
         root = n;
@@ -29,6 +35,40 @@ public class PrefixTree {
         return subtree;
     }
 
+    public String getPrefix(String word) {
+        Node cur = root;
+        StringBuilder prefix = new StringBuilder();
+        for (int i = 0; i < word.length(); i++) {
+            if (cur.children[word.charAt(i) - 'a'] == null)
+                return prefix.toString();
+            cur = cur.children[word.charAt(i) - 'a'];
+            prefix.append(cur.letter);
+        }
+        return prefix.toString();
+    }
+
+    public LinkedList<String> buildList(String prefix) {
+        PrefixTree subtree = findPrefix(prefix);
+        LinkedList<String> words = new LinkedList<String>();
+        if (subtree.root.endOfWord == true)
+            words.add(prefix);
+        for (Node next : subtree.root.children) {
+            if (next != null)
+                traverse(words, prefix, next);
+        }
+        return words;
+    }
+
+    public void traverse(LinkedList<String> words, String prefix, Node cur) {
+        prefix += cur.letter;
+        if (cur.endOfWord == true)
+            words.add(prefix);
+        for (Node next : cur.children) {
+            if (next != null)
+                traverse(words, prefix, next);
+        }
+    }
+
     public boolean contains(String word) {
         Node cur = root;
         for (int i = 0; i < word.length(); i++) {
@@ -40,13 +80,11 @@ public class PrefixTree {
     }
 
     public static void main(String[] args) {
-        Node root = new Node('0');
-        PrefixTree test = new PrefixTree(root);
-        test.addWord("do");
-        test.addWord("doctor");
-        test.addWord("dance");
-        test.addWord("doll");
-        test.addWord("dog");
+        PrefixTree test = new PrefixTree();
+        test.addWord("blink");
+        test.addWord("blue");
+        test.addWord("black");
+        test.addWord("bill");
         Node cur = test.root;
         for (int i = 0; i < cur.children.length; i++) {
             if (cur.children[i] != null) {
@@ -57,8 +95,7 @@ public class PrefixTree {
                 }
             }
         }
-        if (test.contains("dance"))
-            System.out.println("That word is here!");
+        LinkedList<String> list = test.buildList("b");
+        System.out.println(list.toString());
     }
-
 }
