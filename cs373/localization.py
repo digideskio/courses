@@ -1,6 +1,7 @@
-p = [0, 1, 0, 0, 0]
+p = [0.2, 0.2, 0.2, 0.2, 0.2]
 world = ['green', 'red', 'red', 'green', 'green']
-measurements = ['red', 'green']
+measurements = ['red', 'red']
+motions = [1, 1]
 pHit = 0.6
 pMiss = 0.2
 pExact = 0.8
@@ -25,7 +26,8 @@ def move(p, U):
         q.append(s)
     return q
 
-for i in range(1000):
-     p = move(p, 1)
+for measure, motion in zip(measurements, motions):
+    p = sense(p, measure)
+    p = move(p, motion)
 
 print p
