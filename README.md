@@ -7,3 +7,6 @@
 - **PHIL2201**: History of Philosophy II: Aquinas to Kant
 - **PHIL3411**: Symbolic Logic
 - **PHIL3752**: Philosophy of Law
+
+##Online Courses
+- **CS373**: Artificial Intelligence for Robotics
